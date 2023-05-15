@@ -45,7 +45,7 @@ const generateMarkupCountryInfo = data =>
       console.log(name);
       return (
         acc +
-        ` <img src="${svg}" alt="${name}" width="320" height="auto">
+        ` <img src="${svg}" alt="${name}" width="200" height="auto">
             <p> ${name.official}</p>
             <p>Capital: <span> ${capital}</span></p>
             <p>Population: <span> ${population}</span></p>
@@ -60,7 +60,7 @@ const generateMarkupCountryList = data =>
     return (
       acc +
       `<li>
-        <img src="${svg}" alt="${common}" width="70">
+        <img src="${svg}" alt="${common}" width="50">
         <span>${official}</span>
       </li>`
     );
