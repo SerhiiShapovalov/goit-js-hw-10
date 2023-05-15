@@ -4,7 +4,9 @@ const searchParams = new URLSearchParams({
 });
 
 export const fetchCountries = async name => {
-  const response = await fetch(`${BASE_URL}${name}?${searchParams}`);
+  const response = await fetch(
+        `${BASE_URL}${name}?fields=name,capital,population,flags,languages`
+    );
     if (response.status === 404) {
         throw new Error(response.status);
     }
