@@ -11,8 +11,4 @@ export const fetchCountries = async name => {
       throw new Error(response.status);
     }
     return response.json();
-    // if (response.status === 404) {
-    //     throw new Error(response.status);
-    // }
-    // return await response.json();
 };
