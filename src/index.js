@@ -21,17 +21,23 @@ function onInputSearch(e) {
     return;
   }
 
-  fetchCountries(value).then(data => {
-    if (data.length > 10) {      
-      Notify.info('Too many matches found. Please enter a more specific name.');
+  fetchCountries(value)
+    .then(data => {
+      if (data.length > 10) {
+        Notify.info(
+          'Too many matches found. Please enter a more specific name.'
+        );
+        clearInterfaceUI();
+      }
+      renderCountries(data);
+    })
+    .catch(err => {
       clearInterfaceUI();
-    }
-    renderCountries(data);
-  }).catch;
-  if (error.message === 404) {
-    Notify.failure('Oops, there is no country with that name');
-    clearInterfaceUI();
-  } else Notify.failure(error.message);
+      console.log(err);
+      console.log(err.message);
+      err.message === 404;
+      return Notify.failure('Oops, there is no country with that name');
+    });
 }
 
 const generateMarkupCountryInfo = data =>
